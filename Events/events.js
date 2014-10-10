@@ -7,7 +7,7 @@
  */
 (function(extendableObject) {
   'use strict';
-  if (typeof extendableObject !== 'object') {
+  if (!(extendableObject instanceof Object)) {
     extendableObject = window;
   }
   /**
