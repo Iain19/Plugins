@@ -8,25 +8,25 @@
   /**
    * @param {!HTMLElement} element
    * @param {string} type
-   * @param {function} handler - event handler
+   * @param {function} listener
    */
-  this.addEvent = function(element, type, handler) {
+  this.addEvent = function(element, type, listener) {
     if (typeof element.addEventListener === 'function') {
-      element.addEventListener(type, handler);
+      element.addEventListener(type, listener);
     } else {
-      element.attachEvent('on' + type, handler);
+      element.attachEvent('on' + type, listener);
     }
   };
   /**
    * @param {!HTMLElement} element
    * @param {string} type
-   * @param {function} handler - event handler we want to remove
+   * @param {function} listener
    */
-  this.removeEvent = function(element, type, handler) {
+  this.removeEvent = function(element, type, listener) {
     if (typeof element.removeEventListener === 'function') {
-      element.removeEventListener(type, handler);
+      element.removeEventListener(type, listener);
     } else {
-      element.detachEvent('on' + type, handler);
+      element.detachEvent('on' + type, listener);
     }
   };
 }());
