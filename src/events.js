@@ -6,27 +6,27 @@
 (function() {
   'use strict';
   /**
-   * @param {HTMLElement} elem - element on which we hang event handler
+   * @param {!HTMLElement} element
    * @param {string} event - event we want to handle on
    * @param {function} handler - event handler
    */
-  this.addEvent = function(elem, event, handler) {
-    if (typeof elem.addEventListener === 'function') {
-      elem.addEventListener(event, handler);
+  this.addEvent = function(element, event, handler) {
+    if (typeof element.addEventListener === 'function') {
+      element.addEventListener(event, handler);
     } else {
-      elem.attachEvent('on' + event, handler);
+      element.attachEvent('on' + event, handler);
     }
   };
   /**
-   * @param {HTMLElement} elem - element from which we remove event handler
+   * @param {!HTMLElement} element
    * @param {string} event - event we want to remove a handle from
    * @param {function} handler - event handler we want to remove
    */
-  this.removeEvent = function(elem, event, handler) {
-    if (typeof elem.removeEventListener === 'function') {
-      elem.removeEventListener(event, handler);
+  this.removeEvent = function(element, event, handler) {
+    if (typeof element.removeEventListener === 'function') {
+      element.removeEventListener(event, handler);
     } else {
-      elem.detachEvent('on' + event, handler);
+      element.detachEvent('on' + event, handler);
     }
   };
 }());
