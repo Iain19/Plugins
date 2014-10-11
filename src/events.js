@@ -1,9 +1,4 @@
-/**
- * Cross-browser functions for work with Events
- *
- * @version 0.0.1
- */
-(function() {
+var runEventsPlugin = function() {
   'use strict';
   /**
    * @param {!HTMLElement} element
@@ -29,4 +24,4 @@
       element.detachEvent('on' + type, listener);
     }
   };
-}());
+};
